@@ -1,6 +1,7 @@
 # 3DS build artefacts
 build/
 romfs/gfx/
+backup/
 *.elf
 *.3dsx
 *.cia
