@@ -1,0 +1,1 @@
+﻿autosave_msg:{dfg}This game has a level autosave feature.\nWhen you see the icon above displayed,\nthe game is saving your data.\n\nPlease do not turn off your Nintendo 3DS\nconsole while this icon is on-screen.
