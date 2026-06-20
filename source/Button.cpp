@@ -14,7 +14,7 @@ void Button::init()
 
     for(int i = 0; i < 4; i++) {
     C2D_SpriteFromSheet(textSprs[i], graphicSheet, i); 
-    C2D_SpriteSetScale(textSprs[i], 1.0f, 1.0f);
+    C2D_SpriteSetScale(textSprs[i], 0.375f, 0.375f);
     C2D_SpriteSetCenter(textSprs[i], 0.5f, 0.5f);
     C2D_SpriteSetPos(textSprs[i], 200, 160);
     }

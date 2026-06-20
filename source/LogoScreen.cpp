@@ -25,10 +25,17 @@ C2D_SpriteSetCenter(&fourJSpr, 0.5f, 0.5f);
 
 C2D_SpriteSetPos(&mojangSpr, 200.0f, 120.0f);
 C2D_SpriteSetPos(&fourJSpr, 200.0f, 120.0f);
+
+finished = false;
 }
 
 void LogoScreen::update()
 {
+    if (hidKeysDown() & KEY_A)
+    {
+        finished = true;
+    }
+
     timer += 0.016f;
 
     const float fadeTime = 0.4f;
@@ -59,6 +66,8 @@ void LogoScreen::update()
         if (stage > 2)
             stage = 2;
     }
+
+
 }
 
 void LogoScreen::draw(C3D_RenderTarget* top)
@@ -95,7 +104,15 @@ if (spr)
 }
 }
 
-bool LogoScreen::isFinished()
+bool LogoScreen::isFinished() const
 {
-    return stage >= 2;
+   return (stage >= 2) || finished;
+}
+
+void LogoScreen::exit()
+{
+
+    C2D_SpriteSheetFree(mojangSheet);
+    C2D_SpriteSheetFree(fourJSheet);
+
 }

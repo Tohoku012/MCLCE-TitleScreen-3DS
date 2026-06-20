@@ -73,7 +73,10 @@ while (aptMainLoop())
         logo.update();
 
         if (logo.isFinished())
+        {
+            logo.exit();
             state = AUTOSAVE;
+        }
     }
     else if (state == AUTOSAVE)
     {

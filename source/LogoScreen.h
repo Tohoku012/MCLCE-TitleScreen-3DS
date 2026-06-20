@@ -7,7 +7,8 @@ public:
     void init();
     void update();
     void draw(C3D_RenderTarget* bottom);
-    bool isFinished();
+    void exit();
+    bool isFinished() const;
 
 private:
 C2D_SpriteSheet mojangSheet;
@@ -20,4 +21,6 @@ float timer;
 float alpha;
 u8 fadeAlpha;
 int stage; // 0=mojang,1=4j,2=end
+
+bool finished;
 };
