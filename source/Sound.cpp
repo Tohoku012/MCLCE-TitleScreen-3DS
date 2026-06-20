@@ -1,6 +1,7 @@
 #include "Sound.h"
 #include <stdlib.h>
 #include <string.h>
+#include <time.h> 
 
 const char* Sound::bgm_files[] = {
     "romfs:/Media/sound/bgm/menu1.ogg",
@@ -17,8 +18,12 @@ Sound::Sound() : stream_buffers{NULL, NULL}, current_buffer(0), is_ogg_playing(f
 }
 
 void Sound::init() {
+    srand((unsigned int)svcGetSystemTick());
+
     ndspInit();
     ndspSetOutputCount(2);
+
+    shuffleBGMOrder();
     
     float mix_bgm[12] = {0};
     mix_bgm[0] = 1.0; mix_bgm[1] = 1.0;
@@ -136,8 +141,26 @@ void Sound::playBGM(const char* path) {
     is_ogg_playing = true;
 }
 
+void Sound::shuffleBGMOrder() {
+    // フィッシャー–イェーツのシャッフル
+    for (int i = 3; i > 0; i--) {
+        int j = rand() % (i + 1);
+        int temp = bgm_order[i];
+        bgm_order[i] = bgm_order[j];
+        bgm_order[j] = temp;
+    }
+}
+
 void Sound::playBGMRandom() {
-    playBGM(bgm_files[rand() % BGM_COUNT]);
+    if (current_idx >= 4) {
+        shuffleBGMOrder();
+        current_idx = 0;
+    }
+
+    int next_index = bgm_order[current_idx];
+    current_idx++;
+    
+    playBGM(bgm_files[next_index]);
 }
 
 void Sound::update() {

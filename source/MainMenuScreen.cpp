@@ -99,11 +99,11 @@ static u64 lastPressTime = 0;
         if (kHeld & KEY_UP) {
             selectedIndex--;
             if (selectedIndex < 0) selectedIndex = 3;
-            sound.playFocus();
+            //sound.playFocus();
         } else if (kHeld & KEY_DOWN) {
             selectedIndex++;
             if (selectedIndex > 3) selectedIndex = 0;
-            sound.playFocus();
+            //sound.playFocus();
         }
     }
 

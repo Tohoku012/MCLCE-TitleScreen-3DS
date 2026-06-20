@@ -4,6 +4,12 @@
 
 class Sound {
 private:
+    int last_bgm_index = -1;
+    int bgm_order[4] = {0, 1, 2, 3}; 
+    void shuffleBGMOrder();
+    
+    int current_idx = 0;
+
     static const int BUFFER_SIZE = 32 * 1024;
     
     static const int BGM_COUNT = 4;
