@@ -23,13 +23,6 @@ void MainMenuScreen::init()
     dynamicBuf = C2D_TextBufNew(500);
     myMojangFont = C2D_FontLoad("romfs:/Media/font/Mojang_Font_7.bcfnt");
     myDFGFont = C2D_FontLoad("romfs:/Media/font/DFGMaruGothic-Md.bcfnt");
-    
-    /*
-    C2D_Text PlayGametext;
-    C2D_Text Archievementstext;
-    C2D_Text HelpOptionstext;
-    C2D_Text ExitGametext;
-    */
 
     cfguInit();
     u8 lang;
