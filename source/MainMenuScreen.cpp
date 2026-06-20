@@ -41,13 +41,13 @@ void MainMenuScreen::init()
         // 丸ゴシック
         //C2D_TextFontParse(&autosavetext, myDFGFont, dynamicBuf, "");
         C2D_TextFontParse(&PlayGametext, myDFGFont, dynamicBuf, "プレイする");
-        C2D_TextFontParse(&Archievementstext, myDFGFont, dynamicBuf, "実績");
+        C2D_TextFontParse(&Achievementstext, myDFGFont, dynamicBuf, "実績");
         C2D_TextFontParse(&HelpOptionstext, myDFGFont, dynamicBuf, "遊び方 & オプション");
         C2D_TextFontParse(&Storetext, myDFGFont, dynamicBuf, "Minecraft ストア");
     } else {
         // Mojangフォント
         C2D_TextFontParse(&PlayGametext, myMojangFont, dynamicBuf, "Play Game");
-        C2D_TextFontParse(&Archievementstext, myMojangFont, dynamicBuf, "Archievements");
+        C2D_TextFontParse(&Achievementstext, myMojangFont, dynamicBuf, "Achievements");
         C2D_TextFontParse(&HelpOptionstext, myMojangFont, dynamicBuf, "Help & Options");
         C2D_TextFontParse(&Storetext, myMojangFont, dynamicBuf, "Minecraft Store");
     }
@@ -122,8 +122,8 @@ void MainMenuScreen::draw(C3D_RenderTarget* top, C3D_RenderTarget* bottom)
 
     // baseY - outH
 
-    C2D_DrawText(&splashtext, C2D_AlignCenter | C2D_WithColor, 202.0f, drawY + 2.0f, 0.0f, textScale, textScale, C2D_Color32(58, 58, 0, 255));
-    C2D_DrawText(&splashtext, C2D_AlignCenter | C2D_WithColor, 200.0f, drawY, 0.0f, textScale, textScale, C2D_Color32(235, 235, 0, 255));
+    C2D_DrawText(&splashtext, C2D_AlignCenter | C2D_WithColor, 202.0f, drawY + 2.0f, 0.0f, textScale, textScale, C2D_Color32(72, 72, 0, 255));
+    C2D_DrawText(&splashtext, C2D_AlignCenter | C2D_WithColor, 200.0f, drawY, 0.0f, textScale, textScale, C2D_Color32(255, 255, 0, 255));
 
 
 
@@ -132,7 +132,7 @@ void MainMenuScreen::draw(C3D_RenderTarget* top, C3D_RenderTarget* bottom)
     
     // 描画ループ
     float yPos[] = {30.0f, 66.0f, 102.0f, 138.0f};
-    C2D_Text* texts[] = {&PlayGametext, &Archievementstext, &HelpOptionstext, &Storetext};
+    C2D_Text* texts[] = {&PlayGametext, &Achievementstext, &HelpOptionstext, &Storetext};
 
     for(int i = 0; i < 4; i++) {
   

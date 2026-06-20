@@ -16,7 +16,7 @@ private:
     C2D_Text splashtext;
 
     C2D_Text PlayGametext;
-    C2D_Text Archievementstext;
+    C2D_Text Achievementstext;
     C2D_Text HelpOptionstext;
     C2D_Text Storetext;
 

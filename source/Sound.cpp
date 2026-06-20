@@ -142,7 +142,6 @@ void Sound::playBGM(const char* path) {
 }
 
 void Sound::shuffleBGMOrder() {
-    // フィッシャー–イェーツのシャッフル
     for (int i = 3; i > 0; i--) {
         int j = rand() % (i + 1);
         int temp = bgm_order[i];
