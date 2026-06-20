@@ -31,6 +31,7 @@ void Button::init()
     buttons[1] = { KEY_B, &bSpr, 0.0f, 0 };
     buttons[2] = { KEY_X, &xSpr, 0.0f, 0 };
     buttons[3] = { KEY_Y, &ySpr, 0.0f, 0 };
+    
 }
 
 void setSpriteY(C2D_Sprite* spr, float y) {
@@ -45,12 +46,15 @@ u32 kDown = hidKeysDown();
 
 for (int i = 0; i < 4; i++) {
         if (kDown & buttons[i].key) {
+
+            if (buttons[i].pressedTime == 0)
             buttons[i].originalY = buttons[i].sprite->params.pos.y;
-            setSpriteY(buttons[i].sprite, buttons[i].originalY + 20.0f); 
+
+            setSpriteY(buttons[i].sprite, 170); 
             buttons[i].pressedTime = currentTime; 
         }
 
-        if (buttons[i].pressedTime > 0 && (currentTime - buttons[i].pressedTime) >= 1000) {
+        if (buttons[i].pressedTime > 0 && (currentTime - buttons[i].pressedTime) >= 500) {
             setSpriteY(buttons[i].sprite, buttons[i].originalY); 
             buttons[i].pressedTime = 0; 
         }
