@@ -38,7 +38,7 @@ void MainMenuScreen::init()
     isJapanese = (lang == CFG_LANGUAGE_JP); 
     
     if (isJapanese) {
-        // 丸ゴシック
+        // 丸ゴシックフォント
         //C2D_TextFontParse(&autosavetext, myDFGFont, dynamicBuf, "");
         C2D_TextFontParse(&PlayGametext, myDFGFont, dynamicBuf, "プレイする");
         C2D_TextFontParse(&Achievementstext, myDFGFont, dynamicBuf, "実績");
