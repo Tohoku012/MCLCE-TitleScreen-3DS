@@ -8,7 +8,7 @@ public:
     void update();
     void draw(C3D_RenderTarget* top, C3D_RenderTarget* bottom);
     bool isFinished() const;
-    ~MainMenuScreen();
+    void exit();
 
 private:
     C2D_Font myMojangFont;

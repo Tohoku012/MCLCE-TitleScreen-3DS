@@ -144,4 +144,7 @@ void AutoSaveScreen::exit()
     C2D_FontFree(myMojangFont);
     C2D_FontFree(myDFGFont);
     C2D_SpriteSheetFree(panelSheet);
+    C2D_SpriteSheetFree(ButtonSheet);
+    C2D_SpriteSheetFree(SaveChestSheet);
+    C2D_SpriteSheetFree(SaveArrowSheet);
 }

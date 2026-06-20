@@ -159,7 +159,7 @@ bool MainMenuScreen::isFinished() const
     return finished;
 }
 
-MainMenuScreen::~MainMenuScreen() {
+void MainMenuScreen::exit() {
     C2D_TextBufDelete(dynamicBuf);
     C2D_FontFree(myMojangFont);
     C2D_FontFree(myDFGFont);

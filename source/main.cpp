@@ -4,6 +4,7 @@
 #include "LogoScreen.h"
 #include "AutoSaveScreen.h"
 #include "MainMenuScreen.h"
+#include "Button.h"
 #include "sound.h"  
 
 #define MAX_SPRITES   14
@@ -41,11 +42,13 @@ LogoScreen logo;
 TitleScreen title;
 AutoSaveScreen autosave;
 MainMenuScreen mainmenu;
+Button button;
 
 logo.init();
 title.init();
 autosave.init();
 mainmenu.init();
+button.init();
 
 enum State {
     LOGO,
@@ -76,6 +79,7 @@ while (aptMainLoop())
     {
         title.update();
         autosave.update();
+        button.update();
         if (autosave.isFinished())
         {
             autosave.exit();
@@ -86,6 +90,7 @@ while (aptMainLoop())
     {
         title.update();
         mainmenu.update();
+        button.update();
     }
 
     C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
@@ -98,11 +103,13 @@ while (aptMainLoop())
     {
         title.draw(top, bottom);
         autosave.draw(bottom);
+        button.draw(top, 0);
     }
     else if (state == TITLE)
     {
         title.draw(top, bottom);
         mainmenu.draw(top, bottom);
+        button.draw(top, 1);
     }
 
     C3D_FrameEnd(0);
@@ -115,6 +122,8 @@ while (aptMainLoop())
     C3D_Fini();
     gfxExit();
     sound.exit();
+    mainmenu.exit();
+    button.exit();
     romfsExit();
 
     return 0;

@@ -1,0 +1,5 @@
+--atlas -f rgba8888 -z auto
+Button_Red.png
+Button_Blue.png
+Button_Yello.png
+Button_Green.png

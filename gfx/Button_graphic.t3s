@@ -1,0 +1,5 @@
+--atlas -f rgba8888 -z auto
+a_graphic.png
+b_graphic.png
+x_graphic.png
+y_graphic.png
