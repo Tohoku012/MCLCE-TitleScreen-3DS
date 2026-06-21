@@ -15,14 +15,14 @@ void Button::init()
 
     for(int i = 0; i < 4; i++) {
     C2D_SpriteFromSheet(textSprs[i], graphicSheet, i); 
-    C2D_SpriteSetScale(textSprs[i], 0.325f, 0.325f);
+    C2D_SpriteSetScale(textSprs[i], 0.3f, 0.3f);
     C2D_SpriteSetCenter(textSprs[i], 0.5f, 0.5f);
     C2D_SpriteSetPos(textSprs[i], 10, 230);
     }
 
     for(int i = 0; i < 4; i++) {
     C2D_SpriteFromSheet(colorSprs[i], buttonSheet, i); 
-    C2D_SpriteSetScale(colorSprs[i], 1.0f, 1.0f);
+    C2D_SpriteSetScale(colorSprs[i], 0.45f, 0.45f);
     C2D_SpriteSetCenter(colorSprs[i], 0.5f, 0.5f);
     }
 
@@ -87,16 +87,26 @@ void Button::draw(C3D_RenderTarget* top, int state)
     switch(state) {
         case 0: // AutoSave
 
+            C2D_SpriteSetPos(&RedSpr, 10.0f, 230.0f);
+            C2D_DrawSprite(&RedSpr); 
+
             C2D_SpriteSetPos(&aSpr, 10.0f, aSpr.params.pos.y);
             C2D_DrawSprite(&aSpr); 
 
-            C2D_DrawText(&Selecttext, C2D_AlignCenter | C2D_WithColor, 161.0f, 201.0f, 0.0f, scale, scale, C2D_Color32(0, 0, 0, 255));
-            C2D_DrawText(&Selecttext, C2D_AlignCenter | C2D_WithColor, 160.0f, 200.0f, 0.0f, scale, scale, C2D_Color32(255, 255, 255, 255));
+
+            C2D_DrawText(&Selecttext, C2D_AlignLeft | C2D_WithColor, 23.0f, 223.0f, 0.0f, scale, scale, C2D_Color32(0, 0, 0, 255));
+            C2D_DrawText(&Selecttext, C2D_AlignLeft | C2D_WithColor, 22.0f, 222.0f, 0.0f, scale, scale, C2D_Color32(255, 255, 255, 255));
             break;
         case 1: // MainMenu
 
+            C2D_SpriteSetPos(&RedSpr, 10.0f, 230.0f);
+            C2D_DrawSprite(&RedSpr); 
+
             C2D_SpriteSetPos(&aSpr, 10.0f, aSpr.params.pos.y);
             C2D_DrawSprite(&aSpr); 
+
+            C2D_DrawText(&Selecttext, C2D_AlignLeft | C2D_WithColor, 23.0f, 223.0f, 0.0f, scale, scale, C2D_Color32(0, 0, 0, 255));
+            C2D_DrawText(&Selecttext, C2D_AlignLeft | C2D_WithColor, 22.0f, 222.0f, 0.0f, scale, scale, C2D_Color32(255, 255, 255, 255));
 
             break;
     }
